@@ -11,7 +11,7 @@ services:
       - GID=1000
     volumes:
       # You may either store all the files in a local folder
-      - /home/matrix/matrix-synapse:/data
+      - ./synapse-data:/data
       # .. or you may split this between different storage points
       # - ./files:/data
       # - /path/to/ssd:/data/uploads
@@ -43,4 +43,3 @@ services:
 
 networks:
   synapse:
-    external: true

@@ -1,0 +1,8 @@
+services:
+  element:
+    image: vectorim/element-web:latest
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/app/config.json
+    ports:
+      - "85:80"
