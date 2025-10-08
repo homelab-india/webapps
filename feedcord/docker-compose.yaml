@@ -3,7 +3,5 @@ services:
     image: qolors/feedcord:latest
     container_name: FeedCord
     restart: unless-stopped
-    environment:
-      - DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/1424762795076878439/KtUxn3lXpBg_JGpK6G4dP5-yTChDZI6Fw-Ur8fjZdv07uxSX8uoej_P8c-XEoN5Duv3n
     volumes:
       - ./appsettings.json:/app/config/appsettings.json
