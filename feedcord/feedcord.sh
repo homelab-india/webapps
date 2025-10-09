@@ -31,6 +31,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+#inserting discord webhook
+sed -i 's|discord-webhook|replace_with_discord_webhook|' /home/gtzapper/docker/feedcord/appsettings.json
+
+
 log_message "Bringing down Docker Compose containers..."
 docker compose -f "$DOCKER_COMPOSE_FILE" down
 
@@ -46,9 +50,6 @@ if [ $? -ne 0 ]; then
   log_message "ERROR: Failed to bring up Docker Compose containers."
   exit 1
 fi
-
-#inserting discord webhook
-sed -i 's|discord-webhook|replace_with_discord_webhook|' /home/gtzapper/docker/feedcord/appsettings.json
 
 log_message "Git pull and Docker rebuild completed successfully."
 
